@@ -1,5 +1,10 @@
+<?php
+include("model.php");
+$rows=get_all_rows();
 
+//echo print_r($rows,1);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +18,19 @@
 		<li>
 			<?php echo 'hello world'; ?>
 		</li>
-		<li>
-			<?php echo 'Head- '.$rows['titel'].<br>s.$rows['text']; ?>
-		</li>
+		
+		</ol>	
+			<?php 
+				/*foreach($rows as $k=>$v){
+				echo 'Head: '.$v['titel'].'<br>Content: '.$v['article'];
+				}
+				*/
+				foreach($rows as $row){
+				echo 'Record:'.$row[0].'.';
+				echo $row[3].'<br>Content: '.$row[4];
+				}
 
-	</ol>
-
+			?>
 
 </body>
 </html>
