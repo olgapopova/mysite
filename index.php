@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +13,12 @@
 		<li>
 			<?php echo 'hello world'; ?>
 		</li>
+		<li>
+			<?php echo 'Head- '.$rows['titel'].<br>s.$rows['text']; ?>
+		</li>
+
 	</ol>
+
+
 </body>
 </html>
