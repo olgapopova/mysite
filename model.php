@@ -3,7 +3,8 @@
 //функция соединения с базой данных
 
 function open_database_connection(){
-$link=mysql_connect("localhost","root","") ;//or die("Ei ole ühendust")
+//$link=mysql_connect("localhost","root","") ;//or die("Ei ole ühendust")
+$link=mysql_connect("localhost","pupil_new","123");
 $db=mysql_select_db('pupil_new',$link);
 
 //mysql_query("SET CHARSET SET UTF-8");//????????????????
