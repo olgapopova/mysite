@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta author="Popova">
+	<title>Start page</title>
 </head>
 <body>
 	<h1>heading1</h1>
