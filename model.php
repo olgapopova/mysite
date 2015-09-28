@@ -24,7 +24,8 @@ function get_all_rows(){
 	}
 	
 	//mysqli_real_escape_string($link,$login);//ekran dannix
-	close_database_connection($link);
+	//close_database_connection($link);//??????????
+	mysql_close($link);
 	return $rows;
 	
 			
