@@ -1,11 +1,3 @@
-<?php
-include("model.php");
-$rows=get_all_rows();
-//new lisa
-//echo print_r($rows,1);
-
-?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -17,20 +9,27 @@ $rows=get_all_rows();
 	<ol>
 		<li>
 			<?php echo 'hello world'; ?>
-		</li>
-		
-		</ol>	
-			<?php 
-				/*foreach($rows as $k=>$v){
-				echo 'Head: '.$v['titel'].'<br>Content: '.$v['article'];
-				}
-				*/
-				foreach($rows as $row){
-				echo 'Record:'.$row[0].'.';
-				echo $row[3].'<br>Content: '.$row[4];
-				}
+		</li>		
 
-			?>
+	</ol>
+	
+		
+		<?php 
+		$n=0;
+		foreach($rows as $row){
+			$n++;
+		echo '<h3>'.$n.'. Head: '.$row['title'].'</h3>Content: '.$row['text'];
+		}
+		?>
+		
+
+		<?php 
+		/*foreach($rows as $row){
+			echo 'Record:'.$row[0].'.';
+			echo $row[3].'<br>Content: '.$row[4];
+		}*/
+	?>
+
 
 </body>
 </html>
