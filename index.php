@@ -1,24 +1,9 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+include "model.php";
+$rows=get_all_rows();
 
+require "view/list.php";
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta author="Popova">
-	<title>Start page</title>
-</head>
-<body>
-	<h1>heading1</h1>
-	<ol>
-		<li>
-			<?php echo 'hello world'; ?>
-		</li>
-		<li>
-			<?php echo 'Head- '.$rows['titel'].<br>s.$rows['text']; ?>
-		</li>
-
-	</ol>
-
-
-</body>
-</html>
