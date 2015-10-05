@@ -14,15 +14,35 @@ function close_database_connection($link){
 	mysql_close($link);
 }
 
-function get_all_rows(){
+function get_all_rows($sql){
 	$link=open_database_connection();
-	$result=mysql_query("SELECT * FROM pages ORDER BY id DESC",$link);
+	$result=mysql_query($sql,$link);
 	$rows=array();
 	while ($row=mysql_fetch_array($result)){
 		$rows[]=$row;
 	}
 	close_database_connection($link);
 	return $rows;
+}
+function add_row()
+{
+	if(empty($_REQUEST['add_title']) && 
+		empty($_REQUEST['add_author']) && 
+			empty($_REQUEST['add_content']) )
+	{
+		return;
+	}
+
+	$titul=$_REQUEST['add_title'];
+	$author=$_REQUEST['add_author'];
+	$content1=$_REQUEST['add_content'];
+	$date=new date();
+	$link=open_database_connection();
+	$sql="INSERT INTO `pages` (`id`, `date`, `author`, `title`, `text`) 
+	VALUES (NULL, '$date', '$author', '$titul', '$content1')";
+	mysql_query($sql);
+	close_database_connection($link);
+	return;
 }
 
 ?>
