@@ -36,7 +36,7 @@ function add_row()
 	$titul=$_REQUEST['add_title'];
 	$author=$_REQUEST['add_author'];
 	$content1=$_REQUEST['add_content'];
-	$date=new date();
+	$date=date("Y-m-d H:i:s");
 	$link=open_database_connection();
 	$sql="INSERT INTO `pages` (`id`, `date`, `author`, `title`, `text`) 
 	VALUES (NULL, '$date', '$author', '$titul', '$content1')";

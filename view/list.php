@@ -1,12 +1,12 @@
 <?php ob_start(); ?>
 
-<h1>heading1 Uus Head</h1>
+<!--<h1>heading1 Uus Head</h1>
 	<ol>
 		<li>
 			<?php echo 'hello world'; ?>
 		</li>		
 
-	</ol>
+	</ol>-->
 	
 		
 	<?php 

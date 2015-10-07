@@ -4,32 +4,25 @@ ini_set('display_errors',1);
 include "model.php";
 
 $uri=$_SERVER['REQUEST_URI'];
+$uri=rtrim($uri,"/");
 echo "uri=$uri";
 echo '<br>SERVER[PHP_SELF]='.$_SERVER['PHP_SELF'];
 
 
 if ($uri=='/mysite/index.php' || $uri=='/mysite/')
 {
-	$sql="SELECT * FROM pages ORDER BY id DESC";
-	$rows=get_all_rows($sql);
-	require "view/list.php";
+	$response=list_action();
 } 
-elseif($uri='/mysite/index.php/admin')
+elseif($uri=='/mysite/index.php/admin' || $uri=='/mysite/')
 {
-	$sql="SELECT * FROM pages ORDER BY id DESC";
-	$rows=get_all_rows($sql);
-	require "view/admin.php";
+	$response=admin_action();
 }
-elseif($uri='/mysite/index.php/add')
+elseif($uri=='/mysite/index.php/add' || $uri=='/mysite/')
 {
-	$row=add_row();
-	
-	$sql="SELECT * FROM pages ORDER BY id DESC";
-	$rows=get_all_rows($sql);
-	require "view/admin.php";
+	$response=add_action();
 }
 
-
+echo $response;
 
 
 ?>

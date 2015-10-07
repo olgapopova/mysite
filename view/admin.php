@@ -25,16 +25,5 @@
 
 	</table>
 </form>
-<?php 
-	$n=0;
-	foreach($rows as $row){
-		$n++;
-		echo '<h3>'.$n.'. Head: '.$row['title'].'</h3>Content: '.$row['text'];
-	}
 
-		echo '<h5>Всего записей в базе: '.$n.'</h5>';
-?>	
-
-
-<?php $content=ob_get_clean();?>
-<?php include ("view/layout.php");?>
+<?php include ("view/list.php");?>
