@@ -13,7 +13,11 @@
 		$n=0;
 		foreach($rows as $row){
 			$n++;
-		echo '<h3>'.$n.'. Head: '.$row['title'].'</h3>Content: '.$row['text'];
+		//echo '<h3>'.$n.'. Head: '.$row['title'].'</h3>Content: '.$row['text'];
+			echo '<li>';
+			echo '<a href="/mysite/index.php/show?id='.$row['id'].'">'.$row['title'].'</a>';
+			echo '</li>';
+
 		}
 
 		echo '<h5>Всего записей в базе: '.$n.'</h5>';

@@ -33,4 +33,14 @@ function add_action()
 	//require "view/admin.php";
 }
 
+function show_action($id)
+{
+	//$id=$_REQUEST['id'];
+	//$sql="SELECT * FROM `pages` WHERE `id`=$id";
+	//$row=get_all_rows($sql);
+	$row=get_row($id);	
+	$html=render_template("view/show.php",array ('row'=>$row));
+	return $html;
+}
+
 ?>

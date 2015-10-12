@@ -44,5 +44,17 @@ function add_row()
 	close_database_connection($link);
 	return;
 }
+function get_row($id){
+	$link=open_database_connection();
+	$sql="SELECT * FROM `pages` WHERE `id`=$id";
+	$result=mysql_query($sql,$link);
+	$rows=array();
+	while ($row=mysql_fetch_array($result)){
+		$rows[]=$row;
+	}
+	close_database_connection($link);
+	return $rows;
+}
+
 
 ?>
