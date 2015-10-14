@@ -22,8 +22,9 @@ elseif($uri=='/mysite/index.php/add' || $uri=='/mysite')
 {
 	$response=add_action();
 }
-elseif($uri=='/mysite/index.php/show' && isset($_REQUEST['id']))
+elseif($_SERVER['PHP_SELF']=='/mysite/index.php/show' )
 {
+	
 	$response=show_action($_REQUEST['id']);
 }
 

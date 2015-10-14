@@ -36,10 +36,11 @@ function add_action()
 function show_action($id)
 {
 	//$id=$_REQUEST['id'];
+	
 	//$sql="SELECT * FROM `pages` WHERE `id`=$id";
 	//$row=get_all_rows($sql);
-	$row=get_row($id);	
-	$html=render_template("view/show.php",array ('row'=>$row));
+	$rows=get_row($id);	
+	$html=render_template("view/show.php",array ('rows'=>$rows));
 	return $html;
 }
 
